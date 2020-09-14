@@ -23,12 +23,12 @@ const AllMatches = ({item}) => {
         <div>
         <select value={year} onChange={handleSelect}>
         <option value=''>All</option>
-        <option value='2019'>Europe</option>
-        <option value='2018'>Asia</option>
-        <option value='2017'>Africa</option>
-        <option value='2016'>Americas</option>
-        <option value='2015'>Oceania</option>
-        <option value='2014'>Oceania</option>
+        <option value='2019'>2019</option>
+        <option value='2018'>2018</option>
+        <option value='2017'>2017</option>
+        <option value='2016'>2016</option>
+        <option value='2015'>2015</option>
+        <option value='2014'>2014</option>
         </select>
         </div>
         <div><table className="table">
