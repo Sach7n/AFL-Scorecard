@@ -1,5 +1,4 @@
 import React,{useEffect,useState} from 'react';
-import styled from 'styled-components';
 
 import axios from 'axios';
 import ShowMatches from './ShowMatches'
@@ -8,6 +7,7 @@ import AllMatches from './AllMatches'
 const Matches = props => {
 
     const[Match,setMatch]=useState([])
+    
     const selectedTeam = props.location.myCustomProps;
 
     useEffect(()=>{
@@ -23,28 +23,25 @@ const Matches = props => {
       },[])
       
       
-      let Filtered1=null;
-      if(selectedTeam){
+      Match.games && Match.games.sort((a, b) => a.date > b.date ? -1 : 1)
+
+      if(selectedTeam)
+      {
       let filtered = [];
       filtered=Match.games && Match.games.filter(item=>(item.hteam ===selectedTeam.name || item.ateam ===selectedTeam.name))
-      {filtered && filtered.sort((a, b) => a.date > b.date ? -1 : 1)}
-      
-      
+
       {if(filtered){
-        Filtered1= filtered.map((item) => (
-         <ShowMatches key={item.id} item={item}> </ShowMatches>
-        ))}}}
+        return <ShowMatches key={filtered.id} item={filtered}> </ShowMatches>
+        }}}
         else{
-          Match.games && Match.games.sort((a, b) => a.date > b.date ? -1 : 1)
-          Filtered1=Match.games && Match.games.map((item) => (
-            <AllMatches key={item.id}  item={item}> </AllMatches>
+            return  <AllMatches key={Match.games && Match.games.id} item={Match.games}> </AllMatches>
            
-            ))}
-            console.log(Filtered1)
+            }
+      
       return (
         <>
         <div>
-        {Filtered1}
+        
         </div>
         </>
        )    
