@@ -1,3 +1,5 @@
-#The AFL Scorecard (Scorboard)
+#The AFL Score (Scorboard)
 
-This app is created using Reactjs and data is fetched using Squiggle API. 
+A weekend project aimed to learn how to fetch and manipulate data received from API (and also grid system).
+
+Squiggle API provides data on AFL teams, which is used to show some of the basic information about the teams.

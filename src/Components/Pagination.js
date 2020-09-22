@@ -29,7 +29,7 @@ const PagiWrap = styled.div`
   margin: 0;
   padding: 0;
   text-align:center;
-  
+ text-size:10%; 
 }
 #pagination li {
   display: inline;

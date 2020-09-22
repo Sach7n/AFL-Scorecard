@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
 
-let IMG_BASE_URL = 'https://squiggle.com.au';
 const Team = ({item}) => {
     
-  
+  let IMG = `https://squiggle.com.au${item.logo}`;
 
     return (
         <StyledTeams>
@@ -16,7 +15,7 @@ const Team = ({item}) => {
                           myCustomProps: item
                       }} >  
             <div className="menuBar">                   
-            <div className='image'> <img  src={`${IMG_BASE_URL}${item.logo}`}  alt='' /> </div>
+            <div className='image'> <img  src={`${IMG}`}  alt='' /> </div>
             <div className='title'><p style={{marginTop:'5%'}}>{item.name}</p> </div>
             </div>
             </Link>                

@@ -1,7 +1,8 @@
 import React,{useContext} from 'react';
 import Team from './Team';
-import styled from 'styled-components';
 import {TeamsContext} from '../TeamContext'
+import styled from 'styled-components';
+
 
 const TeamList = () => {
     
@@ -9,18 +10,14 @@ const TeamList = () => {
 
     return (
     
-    <StyledTeamList >
+    <div >
         
             {Items.teams && Items.teams.map((item) => (
             <Team key={item.id} item={item}> </Team> 
            ))}
 
-        </StyledTeamList>
+        </div>
     );
 };
 
 export default TeamList;
-
-const StyledTeamList = styled.div`
-
-`

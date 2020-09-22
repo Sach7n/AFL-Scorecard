@@ -27,14 +27,16 @@ const Matches = props => {
 
       if(selectedTeam)
       {
+      
       let filtered = [];
       filtered=Match.games && Match.games.filter(item=>(item.hteam ===selectedTeam.name || item.ateam ===selectedTeam.name))
 
       {if(filtered){
-        return <ShowMatches key={filtered.id} item={filtered}> </ShowMatches>
+       
+        return <ShowMatches key={filtered.id} item={filtered} Team={selectedTeam}/>
         }}}
         else{
-            return  <AllMatches key={Match.games && Match.games.id} item={Match.games}> </AllMatches>
+            return  <AllMatches key={Match.games && Match.games.id} item={Match.games} Team={selectedTeam}/>
            
             }
       
