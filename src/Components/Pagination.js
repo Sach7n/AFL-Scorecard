@@ -47,4 +47,10 @@ const PagiWrap = styled.div`
   color: #fff;
   cursor:pointer;
 }
+@media only screen and (max-width: 500px){
+  #pagination {
+    font-size:2%;    
+  }
+ 
+}
 `

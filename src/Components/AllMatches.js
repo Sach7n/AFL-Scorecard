@@ -21,32 +21,24 @@ const AllMatches = ({item},{Team}) => {
 
     return (
         <AllWrap>
-        <div>
-        <select value={year} onChange={handleSelect}>
-        <option value=''>All</option>
-        <option value='2019'>2019</option>
-        <option value='2018'>2018</option>
-        <option value='2017'>2017</option>
-        <option value='2016'>2016</option>
-        <option value='2015'>2015</option>
-        <option value='2014'>2014</option>
-        </select>
-        </div>
-        <div className='grid-container'>             
-          <div className='item-5'>Date</div>
-           <div className='item-1'>Home Team</div>
-           <div className='item-2'>Home score</div>
-           <div className='item-3'>Away Score</div>
-           <div className='item-4'>Away Team</div>
- 
-          </div>
-        <div> 
-              {currentPost && currentPost.map(item=>(<div className='grid-container'>
-              <div className='item-5'>{item.date}</div>
-           <div className='item-1'>{item.hteam}</div>
-           <div className='item-2'>{item.hscore}</div>
-           <div className='item-3'>{item.ascore}</div>
-           <div className='item-4'>{item.ateam}</div>
+        <div className='main-div'> 
+              {currentPost && currentPost.map(item=>(<div className='team-contain'>
+              <div className="time"><p>{item.date}</p></div>
+           
+           <div className="home-team">
+             <p>{item.hteam}</p>
+           </div>
+
+           <div className="line1">
+             <p>{item.hscore}</p>
+             <p>-</p>
+             <p>{item.ascore}</p>
+           </div>
+           
+           <div className="away-team">
+             <p>{item.ateam}</p>
+           </div>
+           
            </div>
            ))}
       
@@ -60,42 +52,125 @@ const AllMatches = ({item},{Team}) => {
 export default AllMatches;
 
 const AllWrap = styled.div`
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(5,1fr);
-  background-color: #ddd;
-  grid-auto-rows: 70px; 
-  padding:10px;
-  
+.main-div{
+  display:flex column;
+  top:0;
+  left:0;
+  width:100%;
+  height:10%;
+  background-image: linear-gradient(to top, #7f84a3, #8088ba);
+  margin:2rem 1rem 2rem 0rem;
+}
+.team-contain{
+  position:relative;
+  display:flex;
+  width:70%;
+  top:0;
+  border-radius: 25px;
+  margin-left:12%;
+  margin-bottom:2%;
+  box-shadow: 0px 0px 20px 0.5px #8488c4;
+  background: #1e236b;
+  background-image: linear-gradient(#7f84a3, #1e236b);
+}
+.team-contain>div{
+  margin:0 0 0.5rem 2rem;    
+}
+.time{
+  width:15rem;
+  color: #f1f1f1;
+
+}
+.home-team{
+  display:flex;
+  width:13rem;   
+
 }
 
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 15px 0;
-  font-size: 25px;
+.home-team p{
+  font-size: 1.8em;
+  color: #f1f1f1;
+  font-weight: 900;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.4),
+               0px 2px 4px rgba(0,0,0,0.1),
+               0px 5px 7px rgba(0,0,0,0.1);
 }
+.line1{
+  display:flex;
+  width:10rem;
+}
+.line1 p{
+  margin:1.8rem 1.2rem 0 1rem;
+  font-size: 1.8em;
+  color: #f1f1f1;
+  font-weight: 900;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.4),
+               0px 2px 4px rgba(0,0,0,0.1),
+               0px 5px 7px rgba(0,0,0,0.1);
+}
+.away-team{
+  display:flex;
+  width:15rem;
 
-.item3 { grid-area: 1 / 4 / 3 / 3; }
-.item2 { grid-area: 2 / 3 / 3 / 4; }
-.item1 { grid-area: 4 / 4 / 4 / 2; }
-.item4 { grid-area: 1 / 2 / 2 / 3; }
-.item5 { grid-area: 1 / 2 / 2 / 3; }
-
+}
+.away-team p{
+  margin-left:1.2rem;
+  font-size: 1.8em;
+  color: #f1f1f1;
+  font-weight: 900;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.4),
+               0px 2px 4px rgba(0,0,0,0.1),
+               0px 5px 7px rgba(0,0,0,0.1);
+}
 @media only screen and (max-width: 768px){
-  .grid-container {
-    grid-template-columns: repeat(auto-fill,5,1fr);
-    padding: 2px;
+  .main-div {
+    width:100%;
+    margin:o;
+    padding:0;
   }
-.grid-container > div {
-  font-size: 15px;
- 
-}
-.item3 { grid-area: 2 / 4 ; }
-.item2 { grid-area: 2 / 4 ; }
-.item1 { grid-area: 2 / 4 ; }
-.item4 { grid-area: 2 / 4 ; }
+  .main-div p{
+    font-size:1rem;
+  }
+    .team-contain{
+      width:100%;
+      margin:0;
+      padding:0;
+    }
+    .team-contain>div{
+      margin:0;    
+      width:23%;
+    }
+    .time p{
+      font-size:0.5rem;  
+      color: #f1f1f1;
+    }
+    .line1 p{
+      margin:10% 5% 0 0;
+    }
 
-}
-
+@media only screen and (max-width: 500px){
+  .main-div {
+    width:100%;
+    margin:o;
+    padding:0;
+  }
+  .main-div p{
+    font-size:0.5rem;
+  }
+    .team-contain{
+      width:100%;
+      margin:0;
+      padding:0;
+    }
+    .team-contain>div{
+      margin:0;    
+      width:23%;
+    }
+    .time p{
+      font-size:0.2rem;  
+      color: #f1f1f1;
+    }
+    .line1 p{
+      margin:10% 5% 0 0;
+    }   
 `
