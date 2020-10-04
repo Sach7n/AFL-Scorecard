@@ -19,20 +19,31 @@ const ShowMatches = ({item}) => {
 
     return (
         <MatchWrap>
-            <div className='grid-container'>             
-          <div className='item-5'>Date</div>
-           <div className='item-1'>Home Team</div>
-           <div className='item-2'>Home score</div>
-           <div className='item-3'>Away Score</div>
-           <div className='item-4'>Away Team</div>
+            <div className='team-contain'>             
+          <div className='time'>Date</div>
+           <div className="home-team">Home Team</div>
+           <div className="line1">Home score</div>
+           <div className='line1'>Away Score</div>
+           <div className="away-team">Away Team</div>
  
           </div>
-            {currentPost.map(item=>(<div className='grid-container'>
-              <div className='item-5'>{item.date}</div>
-           <div className='item-1'>{item.hteam}</div>
-           <div className='item-2'>{item.hscore}</div>
-           <div className='item-3'>{item.ascore}</div>
-           <div className='item-4'>{item.ateam}</div>
+            {currentPost.map(item=>(<div className='team-contain'>
+              <div className="time"><p>{item.date}</p></div>
+           
+           <div className="home-team">
+             <p>{item.hteam}</p>
+           </div>
+
+           <div className="line1">
+             <p>{item.hscore}</p>
+             <p>-</p>
+             <p>{item.ascore}</p>
+           </div>
+           
+           <div className="away-team">
+             <p>{item.ateam}</p>
+           </div>
+           
            </div>
            ))}
 
@@ -45,25 +56,119 @@ const ShowMatches = ({item}) => {
 export default ShowMatches;
 
 const MatchWrap = styled.div`
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    background-color: #ddd;
-    padding: 10px;
+.team-contain{
+  position:relative;
+  display:flex;
+  width:70%;
+  top:0;
+  border-radius: 10px;
+  margin-left:12%;
+  margin-bottom:2%;
+  color:#f1f1f1;
+  background-image: linear-gradient(to top, #7f84a3, #8088ba);
+  box-shadow: 0px 0px 20px 0.5px #8488c4;
   }
-  
-  .grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 20px 0;
-    font-size: 25px;
-  }
-  
-  .item3 { grid-area: 1 / 4 / 3 / 3; }
-  .item2 { grid-area: 2 / 3 / 3 / 4; }
-  .item1 { grid-area: 4 / 4 / 4 / 2; }
-  .item4 { grid-area: 1 / 2 / 2 / 3; }
-  .item5 { grid-area: 1 / 2 / 2 / 3; }
-  
+.team-contain>div{
+  margin:0 0 0.5rem 2rem;    
+}
+.time{
+  width:15rem;
+  color: #f1f1f1;
+}
+.time p{
+  margin-top:12%;
+  width:5rem;
+}
+.home-team{
+  display:flex;
+  width:13rem;   
 
+}
+
+.home-team p{
+  font-size: 1.8em;
+  color: #f1f1f1;
+  font-weight: 900;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.4),
+               0px 2px 4px rgba(0,0,0,0.1),
+               0px 5px 7px rgba(0,0,0,0.1);
+}
+.line1{
+  display:flex;
+  width:10rem;
+}
+.line1 p{
+  margin:1.8rem 1.2rem 0 1rem;
+  font-size: 1.8em;
+  color: #f1f1f1;
+  font-weight: 900;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.4),
+               0px 2px 4px rgba(0,0,0,0.1),
+               0px 5px 7px rgba(0,0,0,0.1);
+}
+.away-team{
+  display:flex;
+  width:15rem;
+
+}
+.away-team p{
+  margin-left:1.2rem;
+  font-size: 1.8em;
+  color: #f1f1f1;
+  font-weight: 900;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.4),
+               0px 2px 4px rgba(0,0,0,0.1),
+               0px 5px 7px rgba(0,0,0,0.1);
+}
+@media only screen and (max-width: 768px){
+  .main-div {
+    width:100%;
+    margin:o;
+    padding:0;
+  }
+  .main-div p{
+    font-size:1rem;
+  }
+    .team-contain{
+      width:100%;
+      margin:0;
+      padding:0;
+    }
+    .team-contain>div{
+      margin:0;    
+      width:23%;
+    }
+    .time p{
+      font-size:0.5rem;  
+      color: #f1f1f1;
+    }
+    .line1 p{
+      margin:10% 5% 0 0;
+    }
+
+@media only screen and (max-width: 500px){
+  .main-div {
+    width:100%;
+    margin:o;
+    padding:0;
+  }
+  .main-div p{
+    font-size:0.5rem;
+  }
+    .team-contain{
+      width:100%;
+      margin:0;
+      padding:0;
+    }
+    .team-contain>div{
+      margin:0;    
+      width:23%;
+    }
+    .time p{
+      font-size:0.2rem;  
+      color: #f1f1f1;
+    }
+    .line1 p{
+      margin:10% 5% 0 0;
+    }   
 `

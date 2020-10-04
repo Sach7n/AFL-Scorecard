@@ -58,7 +58,6 @@ const AllWrap = styled.div`
   left:0;
   width:100%;
   height:10%;
-  background-image: linear-gradient(to top, #7f84a3, #8088ba);
   margin:2rem 1rem 2rem 0rem;
 }
 .team-contain{
@@ -66,12 +65,12 @@ const AllWrap = styled.div`
   display:flex;
   width:70%;
   top:0;
-  border-radius: 25px;
+  border-radius: 10px;
   margin-left:12%;
   margin-bottom:2%;
   box-shadow: 0px 0px 20px 0.5px #8488c4;
-  background: #1e236b;
-  background-image: linear-gradient(#7f84a3, #1e236b);
+  background-image: linear-gradient(to top, #7f84a3, #8088ba);
+ 
 }
 .team-contain>div{
   margin:0 0 0.5rem 2rem;    
@@ -79,7 +78,10 @@ const AllWrap = styled.div`
 .time{
   width:15rem;
   color: #f1f1f1;
-
+}
+.time p{
+  margin-top:12%;
+  width:5rem;
 }
 .home-team{
   display:flex;

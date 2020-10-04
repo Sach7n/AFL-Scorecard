@@ -13,6 +13,7 @@ const App=()=> {
     <>
       
      <Router>
+       <Navbar/>
      <Switch>
       <Route exact path="/" component={TeamList} />
      <Route exact path="/matches" component={Matches} />

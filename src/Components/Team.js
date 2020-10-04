@@ -10,13 +10,13 @@ const Team = ({item}) => {
     return (
         <StyledTeams>
             <div className="main-div">
-            <Link to={{ 
+            <Link className="link-t" to={{ 
                           pathname: "/matches",
                           myCustomProps: item
                       }} >  
-            <div className="menuBar">                   
+            <div className="team-cont">                   
             <div className='image'> <img  src={`${IMG}`}  alt='' /> </div>
-            <div className='title'><p style={{marginTop:'5%'}}>{item.name}</p> </div>
+            <div className='title'><p >{item.name}</p> </div>
             </div>
             </Link>                
             </div>                
@@ -29,43 +29,43 @@ export default Team;
 
 const StyledTeams = styled.div`
 .main-div{
-    text-align: center;
-    height: 40px;
-    width: 50%;
-    margin-left:50%;
-    transform:translate(-50%);
-    background-color: white;
+  display:flex column;
+  top:0;
+  width:100%;
+  height:10%;
+  margin:0rem 1rem 0rem 0rem;
 }
-.menuBar{
-    height:100%;
-    width: 50%;
-    border: 0.001px solid grey;
-    border-width: 0x 0px  0px;
+.team-cont{
+  position:relative;
+  display:flex;
+  width:25rem;
+  top:0;
+  left:50%;
+  border-radius: 10px;
+  transform:translateX(-50%);
+ }
+ .team-cont:hover {
+  background-color: #e1e1e1;
   }
-  
-.menuBar div{
-    align-items:center;
-    justify-content:center;
-    float:left;
-    height: 100%;
-    padding-bottom:0;
-    margin-bottom:0;
-  }
-  
- .menuBar img{
-      max-height: 80%;
-      display: block;
+ .link-t{
+  text-decoration:none;   
   }
   .image{
-    width: 25px;
-    
-    }
+    margin:2% 1% 2% 5%;
+  }
+ .image img{
+      height:25px;
+      width: 25px;
+      margin-top:0;
+      display: block;
+  }
   .title{
-    max-height: 80%;
-    align-items:center;
-    justify-content:center;   
-    padding-left:20%;
+    margin-left:15%;
   }  
-     
+  .title p{
+    margin-top:16%;
+    color: #f51707;
+  }
+   
 }  
   `

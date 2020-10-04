@@ -26,11 +26,6 @@ const Standings = props => {
                           <th>losses</th>
                           <th>Draws</th>
                         </tr>
-               
-               
-               
-               
-               
                           {Stand.standings && Stand.standings.map((item=>  
                            <tr>
                             <td>{item.rank}</td>
