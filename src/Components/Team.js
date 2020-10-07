@@ -38,9 +38,10 @@ const StyledTeams = styled.div`
 .team-cont{
   position:relative;
   display:flex;
-  width:25rem;
+  width:20rem;
   top:0;
   left:50%;
+  justify-content: around;
   border-radius: 10px;
   transform:translateX(-50%);
  }
@@ -66,6 +67,5 @@ const StyledTeams = styled.div`
     margin-top:16%;
     color: #f51707;
   }
-   
 }  
   `

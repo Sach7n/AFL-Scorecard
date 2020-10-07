@@ -1,5 +1,7 @@
 import React,{ useEffect,useState} from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
 
 const Standings = props => {
     const[Stand,setStand]=useState([])
@@ -17,7 +19,8 @@ const Standings = props => {
 
       },[])
     return (
-        <div>
+        <StandWrap>
+        <div className='main-div'>
           <table className="table">
                           <tr>
                           <th>Rank</th>
@@ -37,7 +40,33 @@ const Standings = props => {
                         </tr>))}  
             </table>    
         </div>
+        </StandWrap>
     );
 };
 
 export default Standings;
+
+const StandWrap = styled.div`
+.main-div{
+  overflow-x:auto; 
+}
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table td, .table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-image: linear-gradient(to top, #7f84a3, #8088ba);
+  color: white;
+}
+`

@@ -5,12 +5,12 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
     return (
         <NavWrap>
-            <div className="navbar">
-        <ul>
-          <NavLink to="/" exact>  <li>Teams</li> </NavLink>
-          <NavLink to="/standing" exact>  <li>Standings</li> </NavLink>
-          <NavLink to="/matches" exact>  <li>All Matches</li> </NavLink>
-        </ul>
+            <div >
+            <nav className="header-nav container">
+                 <NavLink to="/" exact>  <p>Teams</p> </NavLink>
+                 <NavLink to="/standing" exact>  <p>Standings</p> </NavLink>
+                 <NavLink to="/matches" exact>  <p>All Matches</p> </NavLink>
+             </nav>
 
             </div>
         </NavWrap>
@@ -26,37 +26,33 @@ const NavWrap = styled.div`
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
 }
-
-body {
-    background: #f1f3f6;
+.header-nav container{
 }
-
-.navbar {
-    display: flex;
-    min-width: 800px;
+.header-nav {
     align-items: center;
-    justify-content: center;
-    background: #fff;
-    padding: 0 20px;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.8);
-    border-radius: 20px;
-    margin: 30px;
+    justify-content:center;
+    display:flex;
+    box-shadow: 0px 0px 20px 0.5px #8488c4;
+    font-weight: bold;
 }
-
-.navbar .con-logo {
-    width: 100px;
-}
-
-.navbar ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-}
-.navbar ul li {
-    padding: 20px;
-    font-weight: 500;
-    text-transform: capitalize;
-    cursor: pointer;
-}
-`
+    .header-nav a {
+        margin-left : 0.3rem;
+        text-decoration: none;
+        padding: 1rem;
+        color: #8488c4;
+        z-index: inherit;
+    }
+    @media all and (max-width: 600px) {
+        .header {
+            position: inherit;
+        }
+      .header, .header-nav {
+        -webkit-flex-flow: column wrap;
+        flex-flow: column wrap;
+            align-content: center;
+        padding: 0;
+            background-color: #fff;
+      }
+    }
+    
+    `
